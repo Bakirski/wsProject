@@ -4,10 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Live ChatRoom</title>
+    <link rel="stylesheet" href="/frontend/Styles/index.css" />
   </head>
   <body>
-    <div id="messageContainer"></div>
-
+    <div class="welcome-container">
+      <div id="messageContainer" class="welcome-message"></div>
+      <form id="usernameForm" class="username-form">
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Your Username"
+        />
+        <input type="submit" value="Connect" class="connect-button" />
+      </form>
+    </div>
     <script src="Scripts/script.js"></script>
   </body>
 </html>

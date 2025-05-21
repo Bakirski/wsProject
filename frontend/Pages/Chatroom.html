@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chatroom</title>
+    <link rel="stylesheet" href="/frontend/Styles/chatroom.css" />
+  </head>
+  <body>
+    <div class="flex-container">
+      <div id="chat" class="chat-container"></div>
+      <div class="chat-form">
+        <form id="chatForm">
+          <input
+            type="text"
+            id="chatInput"
+            placeholder="Type a message"
+            autocomplete="off"
+            required
+          />
+          <button type="submit" class="send-button">Send</button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="/frontend/Scripts/ws.js"></script>
+  </body>
+</html>
