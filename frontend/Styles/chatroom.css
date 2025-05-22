@@ -1,5 +1,7 @@
-body {
-  background-color: antiquewhite;
+html {
+  background-image: image-set("/frontend/icons/background.jpg");
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .chat-form {
@@ -13,7 +15,7 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   box-shadow: 1px 3px 2px 1px rgba(29, 26, 26, 0.6);
-  background-color: rgb(235, 212, 182);
+  background-color: rgb(224, 240, 255);
 }
 
 .chat-form input,
@@ -44,12 +46,13 @@ body {
   box-shadow: 1px 0px 2px 1px rgba(29, 26, 26, 0.6);
   width: 30%;
   margin: auto;
-  min-height: 5rem;
+  min-height: 10rem;
+  max-height: 50vh;
   padding: 5px;
   border-radius: 5px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  background-color: rgb(235, 212, 182);
+  background-color: rgb(224, 240, 255);
 }
 
 .flex-container {
@@ -85,4 +88,12 @@ body {
   margin: 5px;
   border-radius: 10px;
   word-wrap: break-word;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 30%;
+  justify-content: space-between;
 }

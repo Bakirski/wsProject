@@ -1,5 +1,5 @@
-body {
-  background-color: antiquewhite;
+html {
+  background-image: image-set("/frontend/icons/background.jpg");
 }
 .welcome-message {
   font-size: 2em;
