@@ -1,19 +1,38 @@
 const username = sessionStorage.getItem("chatUsername") || "Anonymous";
 const socket = new WebSocket("ws://localhost:4000");
 
+window.onload = () => {
+  const name = document.getElementById("usernameDisplay");
+  name.innerHTML = "User: " + username;
+};
+
+function disconnect() {
+  socket.close();
+  window.location.href = "/frontend/index.html";
+}
+
 socket.addEventListener("open", () => {
   socket.send(JSON.stringify({ type: "register", username }));
 });
 
 socket.addEventListener("message", (event) => {
   try {
-    const { username: sender, message } = JSON.parse(event.data);
-    renderMessage(sender, message);
+    const data = JSON.parse(event.data);
+
+    if (data.type === "userCount") {
+      const userCount = document.getElementById("connectedUsers");
+      userCount.textContent =
+        data.count === 1
+          ? data.count + " Connected User"
+          : data.count + " Connected Users";
+    } else {
+      const { username: sender, message } = data;
+      renderMessage(sender, message);
+    }
   } catch (err) {
     console.error("Invalid message format", err);
   }
 });
-
 
 document.getElementById("chatForm").addEventListener("submit", (e) => {
   e.preventDefault();
